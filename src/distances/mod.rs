@@ -1,4 +1,5 @@
 mod canberra;
+mod canberra_grad;
 mod chebyshev;
 mod chebyshev_grad;
 mod euclidean;
@@ -18,6 +19,7 @@ mod weighted_minkowski;
 mod weighted_minkowski_grad;
 
 pub use canberra::*;
+pub use canberra_grad::*;
 pub use chebyshev::*;
 pub use chebyshev_grad::*;
 pub use euclidean::*;
