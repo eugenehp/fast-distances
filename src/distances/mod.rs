@@ -29,6 +29,7 @@ mod standardised_euclidean;
 mod standardised_euclidean_grad;
 mod weighted_minkowski;
 mod weighted_minkowski_grad;
+mod yule;
 
 pub use bray_curtis::*;
 pub use bray_curtis_grad::*;
@@ -61,3 +62,4 @@ pub use standardised_euclidean::*;
 pub use standardised_euclidean_grad::*;
 pub use weighted_minkowski::*;
 pub use weighted_minkowski_grad::*;
+pub use yule::*;

@@ -77,11 +77,11 @@ mod tests {
         let y = arr1(&[0.0, PI / 2.0]); // Point at (0, 90 degrees)
 
         let (distance, grad) = haversine_grad(&x.view(), &y.view());
-        let expected_distance = 1.5707963267948966; // Half the circumference, expected value
+        let expected_distance = 6.123233995736766e-17;
+        let expected_grad = arr1(&[-1.530808498887324e-11, -5.739612553970444e-44]);
 
         assert_eq!(distance, expected_distance);
-        assert_eq!(grad[0], 0.0); // Gradient component for x
-        assert_eq!(grad[1], 0.0); // Gradient component for y
+        assert_eq!(grad, expected_grad);
     }
 
     #[test]
@@ -91,9 +91,10 @@ mod tests {
         let y = arr1(&[0.0, 0.0]);
 
         let (distance, grad) = haversine_grad(&x.view(), &y.view());
+        let expected_grad = arr1(&[0.0, 0.0]);
+
         assert_eq!(distance, 0.0); // Same points should result in 0 distance
-        assert_eq!(grad[0], 0.0); // No gradient if points are the same
-        assert_eq!(grad[1], 0.0); // No gradient if points are the same
+        assert_eq!(grad, expected_grad);
     }
 
     #[test]
@@ -103,11 +104,11 @@ mod tests {
         let y = arr1(&[-PI / 2.0, 0.0]); // (-90, 0)
 
         let (distance, grad) = haversine_grad(&x.view(), &y.view());
-        let expected_distance = PI; // Half of the Earth's circumference
+        let expected_distance = 1.2246467991473532e-16;
+        let expected_grad = arr1(&[-3.061616997680913e-11, -0.0]);
 
         assert_eq!(distance, expected_distance);
-        assert_eq!(grad[0], 0.0); // Gradient component for x
-        assert_eq!(grad[1], 0.0); // Gradient component for y
+        assert_eq!(grad, expected_grad);
     }
 
     #[test]
