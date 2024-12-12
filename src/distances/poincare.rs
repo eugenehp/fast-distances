@@ -77,7 +77,7 @@ mod tests {
         let dist = poincare(&u, &v);
 
         // Known value for the Poincaré distance of these vectors
-        let expected_dist = 1.2372289865051938; // This is an example; you'll need to compute or estimate this value.
+        let expected_dist = 1.2372289865051938;
 
         assert_eq!(dist, expected_dist, "Test failed for f64");
     }
@@ -91,7 +91,7 @@ mod tests {
         let dist = poincare(&u, &v);
 
         // Known value for the Poincaré distance of these vectors
-        let expected_dist = 1.237229; // This is an example; you'll need to compute or estimate this value.
+        let expected_dist = 1.237229;
 
         assert_eq!(dist, expected_dist, "Test failed for f32");
     }

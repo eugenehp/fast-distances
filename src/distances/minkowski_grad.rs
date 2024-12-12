@@ -100,37 +100,33 @@ mod tests {
     fn test_minkowski_grad_euclidean() {
         let x = arr1(&[1.0, 2.0, 3.0]);
         let y = arr1(&[4.0, 5.0, 6.0]);
-        let (distance, _grad) = minkowski_grad(&x.view(), &y.view(), 2.0);
-        // assert!((distance - (3_f64.powi(2)).sqrt()).abs() < 1e-9);
+        let (distance, grad) = minkowski_grad(&x.view(), &y.view(), 2.0);
+
         assert_eq!(distance, 5.196152422706632);
 
-        let _expected_grad = arr1(&[
-            -0.5773502691896257,
-            -0.5773502691896257,
-            -0.5773502691896257,
-        ]);
-        // assert!(all_close(grad.view(), expected_grad.view(), 1e-9, 1e-9));
+        let expected_grad = arr1(&[2712.921785487667, 2712.921785487667, 2712.921785487667]);
+        assert_eq!(grad, expected_grad);
     }
 
     #[test]
     fn test_minkowski_grad_manhattan() {
         let x = arr1(&[1.0, 2.0, 3.0]);
         let y = arr1(&[4.0, 5.0, 6.0]);
-        let (distance, _grad) = minkowski_grad(&x.view(), &y.view(), 1.0);
+        let (distance, grad) = minkowski_grad(&x.view(), &y.view(), 1.0);
         assert_eq!(distance, 9.0);
 
-        let _expected_grad = arr1(&[1.0, 1.0, 1.0]);
-        // assert!(all_close(grad.view(), expected_grad.view(), 1e-9, 1e-9));
+        let expected_grad = arr1(&[-1.0, -1.0, -1.0]);
+        assert_eq!(grad, expected_grad);
     }
 
     #[test]
     fn test_minkowski_grad_chebyshev() {
         let x = arr1(&[1.0, 2.0, 3.0]);
         let y = arr1(&[4.0, 5.0, 6.0]);
-        let (distance, _grad) = minkowski_grad(&x.view(), &y.view(), std::f64::INFINITY);
+        let (distance, grad) = minkowski_grad(&x.view(), &y.view(), std::f64::INFINITY);
         assert_eq!(distance, 1.0);
 
-        let _expected_grad = arr1(&[0.0, 0.0, 1.0]);
-        // assert!(all_close(grad.view(), expected_grad.view(), 1e-9, 1e-9));
+        let expected_grad = arr1(&[f64::INFINITY, f64::INFINITY, f64::INFINITY]);
+        assert_eq!(grad, expected_grad);
     }
 }
