@@ -1,4 +1,4 @@
 mod distances;
-mod utils;
+pub mod utils;
 
 pub use distances::*;

@@ -48,7 +48,6 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
-    use num::Float;
 
     // Test for sign with f64
     #[test]
