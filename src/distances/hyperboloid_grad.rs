@@ -24,7 +24,7 @@ use num::{Float, Num};
 /// # Example:
 /// ```
 /// use ndarray::arr1;
-/// use fast_distances::hyperboloid_grad;
+/// use fast_distances::*;
 ///
 /// let x = arr1(&[0.5, 0.3, 0.2]);
 /// let y = arr1(&[0.1, 0.4, 0.5]);
