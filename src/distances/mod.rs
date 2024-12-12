@@ -1,3 +1,4 @@
+mod approx_log_gamma;
 mod bray_curtis;
 mod bray_curtis_grad;
 mod canberra;
@@ -36,6 +37,7 @@ mod weighted_minkowski;
 mod weighted_minkowski_grad;
 mod yule;
 
+pub use approx_log_gamma::*;
 pub use bray_curtis::*;
 pub use bray_curtis_grad::*;
 pub use canberra::*;
