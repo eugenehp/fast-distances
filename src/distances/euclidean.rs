@@ -25,7 +25,10 @@ mod tests {
         let y = vec![4.0f64, 5.0, 6.0];
 
         let dist = euclidean(&x, &y);
-        assert!((dist - 5.196152422706632).abs() < 1e-6, "Test failed for f64.");
+        assert!(
+            (dist - 5.196152422706632).abs() < 1e-6,
+            "Test failed for f64."
+        );
     }
 
     #[test]
