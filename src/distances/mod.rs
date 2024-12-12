@@ -10,6 +10,7 @@ mod minkowski_grad;
 mod poincare;
 mod standardised_euclidean;
 mod standardised_euclidean_grad;
+mod weighted_minkowski;
 
 pub use chebyshev::*;
 pub use chebyshev_grad::*;
@@ -23,3 +24,4 @@ pub use minkowski_grad::*;
 pub use poincare::*;
 pub use standardised_euclidean::*;
 pub use standardised_euclidean_grad::*;
+pub use weighted_minkowski::*;
