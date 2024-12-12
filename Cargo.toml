@@ -1,6 +1,8 @@
 [package]
 name = "fast-distances"
-version = "0.1.0"
+version = "0.0.1"
+description = "A rust library to provide distances for multidimensional arrays"
+authors = ["Eugene Hauptmann"]
 edition = "2021"
 
 [dependencies]
