@@ -1,4 +1,4 @@
-use ndarray::{Array1, ArrayView1};
+use ndarray::ArrayView1;
 use num::Float;
 
 /// Chebyshev or l-infinity distance.
