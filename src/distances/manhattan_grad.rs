@@ -21,7 +21,7 @@ use num::Float;
 ///
 /// ```
 /// use ndarray::arr1;
-/// use fast_distances::manhattan_grad;
+/// use fast_distances::*;
 ///
 /// let x = arr1(&[1.0, 2.0, 3.0]);
 /// let y = arr1(&[4.0, 5.0, 6.0]);
