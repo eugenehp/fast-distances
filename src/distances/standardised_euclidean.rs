@@ -1,6 +1,29 @@
 use ndarray::{arr1, Array1, ArrayView1};
 use num_traits::{Float, One, Zero};
 
+/// Computes the standardised Euclidean distance between two vectors.
+///
+/// The standardised Euclidean distance takes into account the variance (or standard deviation)
+/// of each feature, which is provided by the `sigma` parameter. If `sigma` is not provided,
+/// it defaults to a vector of ones, effectively reducing the calculation to the regular
+/// Euclidean distance.
+///
+/// # Arguments
+///
+/// * `x` - A reference to a 1-dimensional array view of type `T`.
+/// * `y` - Another reference to a 1-dimensional array view of type `T`.
+/// * `sigma` - An optional 1-dimensional array of type `T` representing the standard deviations
+///             or variances for each feature. If not provided, defaults to a vector of ones.
+///
+/// # Returns
+///
+/// The standardised Euclidean distance between `x` and `y`, of type `T`.
+///
+/// # Panics
+///
+/// This function will panic if:
+/// - The input arrays `x` and `y` do not have the same length.
+/// - The `sigma` array (if provided) does not have the same length as `x` and `y`.
 pub fn standardised_euclidean<T>(
     x: &ArrayView1<T>,
     y: &ArrayView1<T>,

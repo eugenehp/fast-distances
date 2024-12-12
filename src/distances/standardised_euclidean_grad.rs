@@ -13,8 +13,8 @@ use num_traits::{Float, FromPrimitive};
 ///
 /// A tuple containing the distance and the gradient.
 pub fn standardised_euclidean_grad<T>(
-    x: ArrayView1<T>,
-    y: ArrayView1<T>,
+    x: &ArrayView1<T>,
+    y: &ArrayView1<T>,
     sigma: Option<Array1<T>>,
 ) -> (T, Array1<T>)
 where
@@ -60,7 +60,7 @@ mod tests {
         let y = arr1(&[4.0f64, 5.0, 6.0]);
         let sigma = arr1(&[1.0f64, 1.0, 1.0]);
 
-        let (d, grad) = standardised_euclidean_grad(x.view(), y.view(), Some(sigma));
+        let (d, grad) = standardised_euclidean_grad(&x.view(), &y.view(), Some(sigma));
 
         // Expected distance
         let expected_d = ((4.0 - 1.0).powi(2) + (5.0 - 2.0).powi(2) + (6.0 - 3.0).powi(2)).sqrt();
@@ -82,7 +82,7 @@ mod tests {
         let x = arr1(&[1.0f64, 2.0, 3.0]);
         let y = arr1(&[4.0f64, 5.0, 6.0]);
 
-        let (d, grad) = standardised_euclidean_grad(x.view(), y.view(), None);
+        let (d, grad) = standardised_euclidean_grad(&x.view(), &y.view(), None);
 
         // Expected distance
         let expected_d = ((4.0 - 1.0).powi(2) + (5.0 - 2.0).powi(2) + (6.0 - 3.0).powi(2)).sqrt();
