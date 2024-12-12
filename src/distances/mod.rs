@@ -1,3 +1,4 @@
+mod chebyshev;
 mod euclidean;
 mod euclidean_grad;
 mod manhattan;
@@ -5,6 +6,7 @@ mod manhattan_grad;
 mod standardised_euclidean;
 mod standardised_euclidean_grad;
 
+pub use chebyshev::*;
 pub use euclidean::*;
 pub use euclidean_grad::*;
 pub use manhattan::*;
