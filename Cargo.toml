@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+approx = "0.5.1"
 ndarray = "0.16.1"
 num = "0.4.3"
 num-traits = "0.2.19"
