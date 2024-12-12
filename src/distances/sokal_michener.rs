@@ -1,6 +1,7 @@
 extern crate ndarray;
 
 use ndarray::ArrayView1;
+use num::Float;
 
 /// Computes the Sokal-Michener similarity between two binary vectors.
 ///
@@ -19,16 +20,21 @@ use ndarray::ArrayView1;
 ///
 /// # Returns
 /// A f64 value representing the Sokal-Michener similarity.
-pub fn sokal_michener(x: &ArrayView1<f64>, y: &ArrayView1<f64>) -> f64 {
-    let mut num_not_equal = 0.0;
+pub fn sokal_michener<T: Float>(x: &ArrayView1<T>, y: &ArrayView1<T>) -> T {
+    let mut num_not_equal = T::zero();
 
     for i in 0..x.len() {
-        let x_true = x[i] != 0.0;
-        let y_true = y[i] != 0.0;
-        num_not_equal += if x_true != y_true { 1.0 } else { 0.0 };
+        let x_true = x[i] != T::zero();
+        let y_true = y[i] != T::zero();
+        num_not_equal = num_not_equal
+            + if x_true != y_true {
+                T::one()
+            } else {
+                T::zero()
+            };
     }
 
-    (2.0 * num_not_equal) / (x.len() as f64 + num_not_equal)
+    (T::from(2.0).unwrap() * num_not_equal) / (T::from(x.len()).unwrap() + num_not_equal)
 }
 
 #[cfg(test)]
