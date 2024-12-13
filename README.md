@@ -101,3 +101,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Acknowledgements
 
 This package draws from many well-established distance and similarity metrics commonly used in data analysis, machine learning, and information retrieval.
+
+## Copyright
+
+© 2024, Eugene Hauptmann
