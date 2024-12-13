@@ -55,9 +55,12 @@ Each module in this package implements a specific distance or similarity measure
 
 Add this package to your Cargo.toml to use it in your project:
 
+```toml
 [dependencies]
 fast-distances = "0.1"
-Usage
+```
+
+## Usage
 
 To use one of the available distance or similarity metrics, import the respective module in your Rust code:
 
