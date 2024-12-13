@@ -2,6 +2,7 @@
 name = "fast-distances"
 version = "0.0.1"
 description = "A rust library to provide distances for multidimensional arrays"
+keywords = ["machine-learning", "clustering", "ai", "ml", "distance"]
 categories = ["mathematics", "science", "algorithms"]
 authors = ["Eugene Hauptmann"]
 repository = "https://github.com/eugenehp/fast-distances"
