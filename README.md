@@ -104,4 +104,4 @@ This package draws from many well-established distance and similarity metrics co
 
 ## Copyright
 
-© 2024-2025, Eugene Hauptmann
+© 2024-2026, Eugene Hauptmann
