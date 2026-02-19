@@ -16,7 +16,7 @@ Each module in this package implements a specific distance or similarity measure
 * chebyshev: Chebyshev distance (L∞ distance), the maximum distance along any coordinate axis.
 * chebyshev_grad: Gradient of the Chebyshev distance.
 * correlation: Pearson correlation coefficient, a measure of linear correlation between two vectors.
-* cosine: Cosine similarity, measuring the cosine of the angle between two vectors.
+* cosine: Cosine distance, measuring the cosine of the angle between two vectors.
 * cosine_grad: Gradient of the cosine similarity.
 * dice: Dice coefficient, a similarity measure often used in bioinformatics.
 * euclidean: Euclidean distance, the straight-line distance between two points.
